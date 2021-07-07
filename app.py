@@ -50,11 +50,10 @@ app = FastAPI()
 @app.on_event("startup")
 def load_model():
     #global model
-    #model = pickle.load(open("model_tree.pkl", "rb"))
     global modelDG
 
     ##Cargar modelo entrenado
-    modelDG = km.load_model('drive/MyDrive/Colab Notebooks/CUIDO/produccion/DGv1/modelo_v1')
+    modelDG = km.load_model('./modelo_v1')
 
 @app.get('/')
 def index():
